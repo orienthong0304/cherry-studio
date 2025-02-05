@@ -24,6 +24,8 @@ import mongoose from 'mongoose'
 import swaggerUi from 'swagger-ui-express'
 
 import { specs } from './config/swagger'
+import adminRoutes from './routes/admin.routes'
+import announcementRoutes from './routes/announcement.routes'
 import authRoutes from './routes/auth.routes'
 
 const app = express()
@@ -51,6 +53,8 @@ app.use(
 // API 路由
 const API_PREFIX = process.env.API_PREFIX || '/api/v1'
 app.use(`${API_PREFIX}/auth`, authRoutes)
+app.use(`${API_PREFIX}/admin`, adminRoutes)
+app.use(`${API_PREFIX}/announcements`, announcementRoutes)
 
 // 基本路由
 app.get('/', (req, res) => {
