@@ -1,0 +1,128 @@
+---
+description: backend tech
+globs: 
+---
+# Backend Architecture and Technology Stack
+
+## Core Technologies
+- Backend Framework: Node.js with Express.js
+  - TypeScript 支持
+  - RESTful API 设计
+  - 中间件架构
+  - 模块化路由
+  
+- Database: MongoDB with Mongoose ODM
+  - Collections 结构:
+    - Users (用户管理)
+      - 基本信息
+      - 认证信息
+      - 角色权限
+    - AIServices (AI服务配置)
+      - 服务类型
+      - API密钥
+      - 使用限制
+    - Usage (使用记录)
+      - 用户调用记录
+      - 资源使用统计
+      - 计费信息
+    - Settings (系统设置)
+      - 全局配置
+      - 特性开关
+      - 环境变量
+  - 数据验证
+  - 索引优化
+  
+- API Documentation
+  - Swagger/OpenAPI 3.0
+  - 交互式 API 测试
+  - 请求/响应示例
+  - 认证流程说明
+  
+- Authentication & Authorization
+  - JSON Web Tokens (JWT)
+  - 基于角色的访问控制 (RBAC)
+  - 多级权限管理
+    - 管理员
+    - 普通用户
+  - Token 刷新机制
+
+## Architecture Components
+1. API Layer
+   - RESTful endpoints
+   - 请求参数验证
+   - 错误处理中间件
+   - 速率限制
+   - CORS 配置
+   - 安全头设置
+   
+2. Service Layer
+   - 业务逻辑处理
+   - AI 服务管理
+   - 用户管理
+   - 使用量追踪
+   - 事务处理
+   
+3. Data Layer
+   - MongoDB 模型
+   - 数据验证
+   - 查询优化
+   - 索引管理
+   - 数据迁移
+   
+4. Security
+   - JWT 认证
+   - 请求加密
+   - API 密钥管理
+   - 速率限制
+   - XSS 防护
+   - CSRF 防护
+   - 密码加密
+   
+5. Monitoring & Logging
+   - 请求日志
+   - 错误追踪
+   - 性能监控
+   - 资源使用统计
+
+## Development Guidelines
+1. 代码规范
+   - 使用 TypeScript 进行开发
+   - ESLint + Prettier 代码格式化
+   - 遵循 RESTful API 设计规范
+   - 使用 async/await 处理异步
+
+2. 文档规范
+   - 使用 Swagger 注释
+   - 添加详细的 API 文档
+   - 代码注释完整性
+   - README 文档维护
+
+3. 错误处理
+   - 统一错误响应格式
+   - 错误日志记录
+   - 开发环境错误堆栈
+   - 生产环境安全提示
+
+4. 配置管理
+   - 使用 dotenv 环境变量
+   - 区分开发/生产配置
+   - 敏感信息加密
+   - 配置项文档化
+
+5. 测试规范
+   - 单元测试
+   - 集成测试
+   - API 测试
+   - 测试覆盖率要求
+
+6. 部署规范
+   - Docker 容器化
+   - CI/CD 流程
+   - 环境隔离
+   - 版本管理
+
+7. 性能优化
+   - 数据库查询优化
+   - 缓存策略
+   - 并发处理
+   - 内存管理
